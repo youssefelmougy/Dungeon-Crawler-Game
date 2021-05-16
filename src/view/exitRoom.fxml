@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ExitRoomController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="785.0" fitWidth="800.0">
+               <image>
+                  <Image url="@images/dungeon_room.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="exitDoor" fitHeight="170.0" fitWidth="170.0" layoutX="317.0" onMouseClicked="#finishGame" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/exitRoomDoor.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="297.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/exitTXT.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="214.0" fitWidth="187.0" layoutX="307.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/playerDwarf.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="16.0" prefWidth="796.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fx:id="playerNameText" fill="WHITE" layoutX="5.0" layoutY="12.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="62.0" />
+            <Text fx:id="playerMoneyText" fill="WHITE" layoutX="766.0" layoutY="12.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

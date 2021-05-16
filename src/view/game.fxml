@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="785.0" fitWidth="800.0" layoutX="-5.0" layoutY="18.0">
+               <image>
+                  <Image url="@images/dungeon_room.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="topDoor" fitHeight="150.0" fitWidth="200.0" layoutX="321.0" layoutY="22.0" onMouseClicked="#movePlayerToTopRoom" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/roomDoor.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="rightDoor" fitHeight="150.0" fitWidth="200.0" layoutX="641.0" layoutY="335.0" onMouseClicked="#movePlayerToRightRoom" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@images/roomDoor.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="leftDoor" fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="335.0" onMouseClicked="#movePlayerToLeftRoom" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+               <image>
+                  <Image url="@images/roomDoor.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="bottomDoor" fitHeight="150.0" fitWidth="200.0" layoutX="321.0" layoutY="627.0" onMouseClicked="#movePlayerToBottomRoom" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+               <image>
+                  <Image url="@images/roomDoor.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerImage" fitHeight="241.0" fitWidth="122.0" layoutX="335.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/playerSword.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="226.0" fitWidth="349.0" layoutX="-5.0" layoutY="-65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/playerStats.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="35.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/hpPlayer.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="playerNameText" fill="WHITE" layoutX="132.0" layoutY="43.0" stroke="#0303030b" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="79.65716552734375">
+               <font>
+                  <Font size="16.0" />
+               </font></Text>
+            <Text fx:id="playerMoneyText" fill="WHITE" layoutX="154.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+               <font>
+                  <Font size="16.0" />
+               </font></Text>
+            <Rectangle fx:id="healthBarPlayer" arcHeight="5.0" arcWidth="5.0" fill="#44bf0f" height="14.0" layoutX="85.0" layoutY="112.0" stroke="BLACK" strokeType="INSIDE" width="130.0" />
+            <Text fx:id="healthTextPlayer" fill="#09e023" layoutX="180.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="556.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/hpMonster.png" />
+               </image>
+            </ImageView>
+            <Rectangle fx:id="healthBarMonster" arcHeight="5.0" arcWidth="5.0" fill="#44bf0f" height="14.0" layoutX="606.0" layoutY="73.0" stroke="BLACK" strokeType="INSIDE" width="130.0" />
+            <Text fx:id="healthTextMonster" fill="#09e023" layoutX="699.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="16.0" fitWidth="147.0" layoutX="603.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/monsterTXT.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="16.0" fitWidth="147.0" layoutX="87.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/playerTXT.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="attackMonsterBox" fitHeight="47.0" fitWidth="242.0" layoutX="494.0" layoutY="505.0" onMouseClicked="#attackMonster" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/attackMonster.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="exitDoor" fitHeight="170.0" fitWidth="170.0" layoutX="313.0" layoutY="14.0" onMouseClicked="#finishGame" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/exitRoomDoor.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="exitDungeonText" fitHeight="150.0" fitWidth="200.0" layoutX="307.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/exitTXT.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="monster" fitHeight="203.0" fitWidth="218.0" layoutX="328.0" layoutY="174.0" onMouseClicked="#askAttackMonster" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/monsterMinotaur.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="230.0" fitWidth="253.0" layoutX="29.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/inventoryPanel.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="weaponAxe" fitHeight="50.0" fitWidth="40.0" layoutX="50.0" layoutY="700.0" onMouseClicked="#swapToAxe" pickOnBounds="true" preserveRatio="true" rotate="-45.0">
+               <image>
+                  <Image url="@images/weaponAxe.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="weaponSword" fitHeight="56.0" fitWidth="47.0" layoutX="118.0" layoutY="617.0" onMouseClicked="#swapToSword" pickOnBounds="true" preserveRatio="true" rotate="145.8">
+               <image>
+                  <Image url="@images/weaponSword.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="weaponBow" fitHeight="57.0" fitWidth="46.0" layoutX="101.0" layoutY="721.0" onMouseClicked="#swapToBow" pickOnBounds="true" preserveRatio="true" rotate="110.3">
+               <image>
+                  <Image url="@images/weaponBow.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="potionAccuracy" fitHeight="56.0" fitWidth="47.0" layoutX="226.0" layoutY="639.0" onMouseClicked="#useAccuracyPotion" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/potionAccuracy.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="potionDamage" fitHeight="56.0" fitWidth="47.0" layoutX="163.0" layoutY="720.0" onMouseClicked="#useDamagePotion" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/potionAttack.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="potionHealth" fitHeight="56.0" fitWidth="47.0" layoutX="163.0" layoutY="618.0" onMouseClicked="#useHealthPotion" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/potionHealth.png" />
+               </image>
+            </ImageView>
+            <Circle layoutX="210.0" layoutY="619.0" radius="12.0" stroke="#ab0d0d" strokeType="INSIDE" />
+            <Text fx:id="potionHealthCounter" fill="WHITE" layoutX="206.0" layoutY="623.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Circle layoutX="273.0" layoutY="639.0" radius="12.0" stroke="#bfbf12" strokeType="INSIDE" />
+            <Text fx:id="potionAccuracyCounter" fill="WHITE" layoutX="269.0" layoutY="643.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Circle layoutX="211.0" layoutY="725.0" radius="12.0" stroke="#0e67ab" strokeType="INSIDE" />
+            <Text fx:id="potionDamageCounter" fill="WHITE" layoutX="207.0" layoutY="729.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <ImageView fx:id="potionEffect" fitHeight="150.0" fitWidth="200.0" layoutX="320.0" layoutY="432.0" opacity="0.81" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/potionEffect.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="droppedItemImageView" fitHeight="114.0" fitWidth="86.0" layoutX="345.0" layoutY="271.0" onMouseClicked="#droppedItemClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/potionHealth.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="addToInventoryBox" fitHeight="71.0" fitWidth="241.0" layoutX="495.0" layoutY="560.0" onMouseClicked="#addDroppedItemToInventory" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/addToInventory.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="equipBox" fitHeight="42.0" fitWidth="249.0" layoutX="494.0" layoutY="615.0" onMouseClicked="#equipButtonClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/equip.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="monster2" fitHeight="203.0" fitWidth="218.0" layoutX="162.0" layoutY="222.0" onMouseClicked="#askAttackMonster2" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/monsterMinotaur.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="droppedItem2ImageView" fitHeight="114.0" fitWidth="86.0" layoutX="265.0" layoutY="336.0" onMouseClicked="#droppedItem2Clicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/potionHealth.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="droppedItemImageView2" fitHeight="114.0" fitWidth="86.0" layoutX="414.0" layoutY="272.0" onMouseClicked="#droppedItemClicked2" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/potionHealth.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="droppedItem2ImageView2" fitHeight="114.0" fitWidth="86.0" layoutX="193.0" layoutY="351.0" onMouseClicked="#droppedItem2Clicked2" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/potionHealth.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="beginChallengeButton" fitHeight="188.0" fitWidth="605.0" layoutX="97.0" layoutY="235.0" onMouseClicked="#beginChallenge" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/beginChallengeText.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="monsterHealth2ImageViewHeart" fitHeight="150.0" fitWidth="200.0" layoutX="555.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/hpMonster.png" />
+               </image>
+            </ImageView>
+            <Rectangle fx:id="healthBarMonster2" arcHeight="5.0" arcWidth="5.0" fill="#44bf0f" height="14.0" layoutX="605.0" layoutY="133.0" stroke="BLACK" strokeType="INSIDE" width="130.0" />
+            <Text fx:id="healthTextMonster2" fill="#09e023" layoutX="698.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="monsterHealth2ImageViewHeartmonsterHealth2ImageViewText" fitHeight="16.0" fitWidth="147.0" layoutX="602.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/monsterTXT.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
